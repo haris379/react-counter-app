@@ -8,10 +8,17 @@ const CounterComp = () => {
   };
 
   const tags = ["tag1", "tag2", "tag3"];
+
+  const handleIncrement = () => {
+    console.log("Increment");
+    setCount(count + 1);
+  };
   return (
     <>
       <span className={getBadgeClass(count)}>{formatCount()}</span>
-      <button className="btn btn-secondary btn-sm">Increment</button>
+      <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
+        Increment
+      </button>
       <ul>
         {tags.map((item) => (
           <li key={item}>{item}</li>

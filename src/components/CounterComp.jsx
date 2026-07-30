@@ -7,24 +7,18 @@ const CounterComp = () => {
     return count === 0 ? "Zero" : count;
   };
 
-  const tags = ["tag1", "tag2", "tag3"];
 
   const handleIncrement = () => {
     console.log("Increment");
     setCount(count + 1);
   };
   return (
-    <>
+    <div>
       <span className={getBadgeClass(count)}>{formatCount()}</span>
       <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
         Increment
       </button>
-      <ul>
-        {tags.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </>
+    </div>
   );
 };
 

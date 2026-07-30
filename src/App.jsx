@@ -1,10 +1,12 @@
 import React from "react";
 import CounterComp from "./components/CounterComp";
+import Counters  from "./components/Counters";
 
 const App = () => {
   return (
     <div>
-      <CounterComp/>
+      {/* <CounterComp/> */}
+      <Counters />
     </div>
   );
 };

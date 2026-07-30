@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-const CounterComp = () => {
-  const [count, setCount] = useState(0);
+const CounterComp = ({ value }) => {
+  const [count, setCount] = useState(value);
 
   const formatCount = () => {
     return count === 0 ? "Zero" : count;
   };
-
 
   const handleIncrement = () => {
     console.log("Increment");

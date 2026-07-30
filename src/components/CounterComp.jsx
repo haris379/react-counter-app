@@ -6,10 +6,17 @@ const CounterComp = () => {
   const formatCount = () => {
     return count === 0 ? "Zero" : count;
   };
+
+  const tags = ["tag1", "tag2", "tag3"];
   return (
     <>
       <span className={getBadgeClass(count)}>{formatCount()}</span>
       <button className="btn btn-secondary btn-sm">Increment</button>
+      <ul>
+        {tags.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </>
   );
 };

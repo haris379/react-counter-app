@@ -1,13 +1,16 @@
 import React from "react";
 import CounterComp from "./components/CounterComp";
-import Counters  from "./components/Counters";
+import Counters from "./components/Counters";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div>
-      {/* <CounterComp/> */}
-      <Counters />
-    </div>
+    <>
+      <Navbar />
+      <main className="container">
+        <Counters />
+      </main>
+    </>
   );
 };
 

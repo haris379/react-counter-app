@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const CounterComp = ({ value }) => {
-  const [count, setCount] = useState(value);
+const CounterComp = ({counter , onDelete}) => {
+  const [count, setCount] = useState(counter.value);
 
   const formatCount = () => {
     return count === 0 ? "Zero" : count;
@@ -16,6 +16,12 @@ const CounterComp = ({ value }) => {
       <span className={getBadgeClass(count)}>{formatCount()}</span>
       <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
         Increment
+      </button>
+      <button
+        className="btn btn-danger btn-sm m-2"
+        onClick={() => onDelete(counter.id)}
+      >
+        Delete
       </button>
     </div>
   );

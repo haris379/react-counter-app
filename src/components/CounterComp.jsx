@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CounterComp = ({counter , onDelete}) => {
-  const [count, setCount] = useState(counter.value);
+const CounterComp = ({ counter, onDelete, onIncrement }) => {
+  function getBadgeClass() {
+    let classes = "badge m-2 text-bg-";
+    classes += counter.value === 0 ? "warning" : "primary";
+    return classes;
+  }
 
   const formatCount = () => {
-    return count === 0 ? "Zero" : count;
+    return counter.value === 0 ? "Zero" : counter.value;
   };
 
-  const handleIncrement = () => {
-    console.log("Increment");
-    setCount(count + 1);
-  };
   return (
     <div>
-      <span className={getBadgeClass(count)}>{formatCount()}</span>
-      <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
+      <span className={getBadgeClass()}>{formatCount()}</span>
+      <button
+        className="btn btn-secondary btn-sm"
+        onClick={() => onIncrement(counter)}
+      >
         Increment
       </button>
       <button
@@ -28,9 +31,3 @@ const CounterComp = ({counter , onDelete}) => {
 };
 
 export default CounterComp;
-
-function getBadgeClass(count) {
-  let classes = "badge m-2 text-bg-";
-  classes += count === 0 ? "warning" : "primary";
-  return classes;
-}

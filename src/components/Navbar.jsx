@@ -1,16 +1,17 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ totalCounters }) => {
   return (
-    <div>
-      <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
-        </div>
-      </nav>
-    </div>
+    <nav className="navbar navbar-light bg-light shadow-sm">
+      <div className="container-fluid">
+        <a className="navbar-brand fw-bold" href="#">
+          Navbar
+          <span className="badge bg-primary rounded-pill ms-2">
+            {totalCounters}
+          </span>
+        </a>
+      </div>
+    </nav>
   );
 };
 
